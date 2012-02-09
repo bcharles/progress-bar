@@ -34,7 +34,7 @@ License: GPL3
  */
 
 function wppb_init() {
-	$wppb_path = WP_PLUGIN_URL . '/wp-progress-bar/';
+	$wppb_path = plugin_dir_url( __FILE__ );
 	if ( !is_admin() ) { // don't load this if we're in the backend
 		wp_register_style( 'wppb_css', $wppb_path . 'css/wppb.css' );
 		wp_enqueue_style( 'wppb_css' );
