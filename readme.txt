@@ -40,7 +40,7 @@ You can change the colors via the css.  Use `div.wppb-progress` to change the s
 
 **1.0.1**
 
-*	added "red" as an optional parameter (can go nuts with colors here, but don't really want to do that yet since it's just going to add a lot of unused CSS to the stylesheet)
+*	added "red" as an optional parameter (can go nuts with colors here, but don't really want to do that yet since it's just going to add a lot of unused CSS to the stylesheet) | usage [wppb progress=50 option=red]
 *	added new parameter $percent | usage [wppb progress=50 percent=after] -- this will display the percentage after the progress bar; [wppb progress=50 percent=inside] -- this will display the percentage on the actual bar itself
 
 **1.0**
