@@ -57,13 +57,13 @@ add_action( 'init', 'wppb_init' );
 
 function wppb( $atts ) {
 	extract( shortcode_atts( array(
-		'progress' => '',
-		'option' => '',
-		'percent' => ''
+		'progress' => '',	// the progress in %
+		'option' => '',		// what options you want to use (candystripes, animated-candystripes, red)
+		'percent' => ''		// whether you want to display the percentage and where you want that to go (after, inside)
 		), $atts ) );
 	// here's the html output of the progress bar
-	$wppb_output	= "<div class=\"wppb-wrapper\">";
-	if ({$percent} != '') {
+	$wppb_output	= "<div class=\"wppb-wrapper {$percent}\">"; // adding $percent to the wrapper class, so I can set a width for the wrapper based on whether it's using div.wppb-wrapper.after or div.wppb-wrapper.inside or just div.wppb-wrapper
+	if ($atts['percent'] != '') { // if $percent is not empty, add this
 		$wppb_output .= "<div class=\"{$percent}\">{$progress}%</div>";
 	}
 	$wppb_output 	.= 	"<div class=\"wppb-progress\">";
