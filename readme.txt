@@ -44,7 +44,7 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 You can change the colors via the css.  Use `div.wppb-progress` to change the style of the container and `div.wppb-progress > span` to change the style of the bar itself.  You can also change the candystripe and animated candystripe.  See http://css-tricks.com/css3-progress-bars/ for an excellent tutorial and http://www.colorzilla.com/gradient-editor/ for a CSS gradient generator.
 
-**No, really, how do I change the colors?  I don't know much about CSS**
+**No, really, how do I change the colors?  I don't know much about CSS.**
 
 Okay, here's a great example that's being used in the plugin CSS right now to create the 'red' option.  Here's the CSS:
 
