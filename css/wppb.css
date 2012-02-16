@@ -69,6 +69,16 @@ div.wppb-progress > span {
 	position: relative;
 }
 
+div.wppb-progress.red > span {
+	background: #d10418; /* Old browsers */
+	background: -moz-linear-gradient(top, #d10418 0%, #6d0019 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d10418), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #d10418 0%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #d10418 0%,#6d0019 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #d10418 0%,#6d0019 100%); /* IE10+ */
+	background: linear-gradient(top, #d10418 0%,#6d0019 100%); /* W3C */
+}
+
 /* candystripes */
 div.wppb-progress > span.candystripes:after, div.wppb-progress > span.animated-candystripes > span {
 	content: "";
