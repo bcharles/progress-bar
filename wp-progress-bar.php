@@ -58,13 +58,18 @@ add_action( 'init', 'wppb_init' );
 function wppb( $atts ) {
 	extract( shortcode_atts( array(
 		'progress' => '',
-		'option' => ''
+		'option' => '',
+		'percent' => ''
 		), $atts ) );
 	// here's the html output of the progress bar
-	$wppb_output	= "{$wppb_progress}";
+	$wppb_output	= "<div class=\"wppb-wrapper\">";
+	if ({$percent} != '') {
+		$wppb_output .= "<div class=\"{$percent}\">{$progress}%</div>";
+	}
 	$wppb_output 	.= 	"<div class=\"wppb-progress\">";
 	$wppb_output 	.=	"	<span style=\"width: {$progress}%;\" class=\"{$option}\"><span></span></span>";
 	$wppb_output	.=	"</div>";
+	$wppb_output	.= "</div>";
 	// now return the progress bar
 	return $wppb_output;
 }
