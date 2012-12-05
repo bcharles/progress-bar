@@ -4,7 +4,7 @@ Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id
 Tags: progress bar, css3, progress, shortcode
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: 1.0.2
+Stable tag: 1.0.4
 
 a simple progress bar shortcode that can be styled with CSS
 
@@ -31,6 +31,8 @@ For demos of each of the options, go here: http://museumthemes.com/progress-bar/
 `[wppb progress=50 option="red candystripe" percent=inside]`
 
 `[wppb progress=50 option=red percent=after]`
+
+`[wppb progress="50/100"]`
 
 == Installation ==
 
@@ -79,6 +81,14 @@ div.wppb-wrapper.right { width: 400px; height: 25px; position: relative; }
 div.wppb-wrapper div.inside { margin: 0 auto; line-height: 25px; color: #ffffff; font-weight: bold; position: absolute; z-index: 1; width: 400px; text-align: right; padding-right: 10px }`
 
 == Changelog ==
+
+**1.0.4**
+
+*	added ability to show progress like 50/100 thanks to pull request from [RavanH](https://github.com/RavanH) https://github.com/jazzsequence/progress-bar/pull/1
+
+**1.0.3**
+
+*	added fullwidth parameter thanks to [callingmedic911](http://profiles.wordpress.org/callingmedic911/) -- this allows the progress bar to have a variable width based on the width of the containing div (not exactly responsive, as suggested [here](http://wordpress.org/support/topic/responsive-progress-bar?replies=12#post-3291966), but it allows the progress bar to be used in sidebars or to take up the full width of the post content area).
 
 **1.0.2**
 
