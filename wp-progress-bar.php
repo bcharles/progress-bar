@@ -78,7 +78,8 @@ function wppb( $atts ) {
 		'percent' => '',		// whether you want to display the percentage and where you want that to go (after, inside)
 		'fullwidth' => '',		// determines if the progress bar should be full width or not
 		'color' => '',			// this will set a static color value for the progress bar, or a starting point for the gradient
-		'gradient' => ''		// will set a positive or negative end result based on the color, e.g. gradient=1 will be 100% brighter, gradient=-0.2 will be 20% darker
+		'gradient' => '',		// will set a positive or negative end result based on the color, e.g. gradient=1 will be 100% brighter, gradient=-0.2 will be 20% darker
+		'endcolor' => ''		// defines an end color for a custom gradient
 		), $atts ) );
 	$pos = strpos($progress, '/');
 	if($pos===false) {
@@ -133,6 +134,10 @@ function wppb( $atts ) {
 	}
 	if (isset($atts['color'])) { // if color is set
 		$wppb_output .= " style=\"width: {$width}; background: {$color};";
+		if (isset($atts['endcolor'])) {
+			$gradient_end = $atts['endcolor'];
+			$wppb_output .= "background: -moz-linear-gradient(top, {$color} 0%, $gradient_end 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,{$color}), color-stop(100%,$gradient_end)); background: -webkit-linear-gradient(top, {$color} 0%,$gradient_end 100%); background: -o-linear-gradient(top, {$color} 0%,$gradient_end 100%); background: -ms-linear-gradient(top, {$gradient} 0%,$gradient_end 100%); background: linear-gradient(top, {$color} 0%,$gradient_end 100%); \"";
+		}
 	} else {
 		$wppb_output .= " style=\"width: {$width};";
 	}
