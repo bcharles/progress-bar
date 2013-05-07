@@ -4,7 +4,7 @@ Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id
 Tags: progress bar, css3, progress, shortcode
 Requires at least: 2.8
 Tested up to: 3.6
-Stable tag: 1.0.5
+Stable tag: 1.1
 
 a simple progress bar shortcode that can be styled with CSS
 
