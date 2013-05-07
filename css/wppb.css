@@ -114,7 +114,7 @@ div.wppb-progress > span.green {
 }
 
 /* candystripes */
-div.wppb-progress > span.candystripes:after, div.wppb-progress > span.candystripe:after {
+div.wppb-progress > span.candystripes:after, div.wppb-progress > span.candystripe:after, div.wppb-progress > span.animated-candystripe:after, div.wppb-progress > span.animated-candystripes:after {
 	content: "";
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
@@ -180,7 +180,7 @@ div.wppb-progress > span.candystripes:after, div.wppb-progress > span.candystrip
 }
 
 /* animated candystripes */
-div.wppb-progress > span.animated-candystripe > span, div.wppb-progress > span.animated-candystripes > span {
+div.wppb-progress > span.animated-candystripe:after, div.wppb-progress > span.animated-candystripes:after {
 	-webkit-animation: move 2s linear infinite;
 }
 
