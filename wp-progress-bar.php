@@ -50,9 +50,25 @@ add_action( 'init', 'wppb_init' );
  * simple shortcode that displays a progress bar
  * @author Chris Reynolds
  * @since 0.1
- * @param string $progress REQUIRED displays the actual progress bar in % or in x/y | usage [wppb progress=50] or [wppb progress=500/1000]
- * @param string $option OPTIONAL calls various options. These can be user-input (uses CSS classes, so anything a user adds to their CSS could potentially be used as an option) or any of the pre-defined options/styles. Included options (as of 1.0.1): candystripes, animated-candystripes, red | usage [wppb progress=50 option="red candystripes"] [wppb progress=50 option=animated-candystripes]
- * @param string $percent OPTIONAL displays the percentage either on the bar itself, or after the progress bar, depending on which parameter is used. Options are 'after' and 'inside'. | usage [wppb progress=50 percent=after]
+ * @param string $progress REQUIRED displays the actual progress bar in % or in x/y
+ * usage: [wppb progress=50] or [wppb progress=500/1000]
+ * @param string $option OPTIONAL calls various options. These can be user-input (uses CSS classes, so anything a user adds to their CSS could
+ * potentially be used as an option) or any of the pre-defined options/styles. Included options (as of 1.0.1): candystripes, animated-candystripes,
+ * red
+ * usage: [wppb progress=50 option="red candystripes"]
+ * usage: [wppb progress=50 option=animated-candystripes]
+ * @param string $percent OPTIONAL displays the percentage either on the bar itself, or after the progress bar, depending on which parameter is used.
+ * Options are 'after' and 'inside'.
+ * usage: [wppb progress=50 percent=after]
+ * @param bool $fullwidth OPTIONAL if present (really, if this is in the shortcode at all), will stretch the progress bar to 100% width
+ * usage: [wppb progress=50 fullwidth=true]
+ * @param string $color OPTIONAL sets a color for the progress bar that overrides the default color. can be used as a starting color for $gradient
+ * usage: [wppb progress=50 color=ff0000]
+ * usage: [wppb progress=50 color=ff0000 gradient=.1]
+ * @param string $gradient OPTIONAL @uses $color adds an end color that is the number of degrees offset from the $color parameter and uses it for a
+ * gradient
+ * $color parameter is REQUIRED for $gradient
+ * usage: [wppb progress=50 color=ff0000 gradient=.1]
  */
 
 function wppb( $atts ) {
@@ -60,7 +76,9 @@ function wppb( $atts ) {
 		'progress' => '',		// the progress in % or x/y
 		'option' => '',			// what options you want to use (candystripes, animated-candystripes, red)
 		'percent' => '',		// whether you want to display the percentage and where you want that to go (after, inside)
-		'fullwidth' => ''		// determines if the progress bar should be full width or not
+		'fullwidth' => '',		// determines if the progress bar should be full width or not
+		'color' => '',			// this will set a static color value for the progress bar, or a starting point for the gradient
+		'gradient' => ''		// will set a positive or negative end result based on the color, e.g. gradient=1 will be 100% brighter, gradient=-0.2 will be 20% darker
 		), $atts ) );
 	$pos = strpos($progress, '/');
 	if($pos===false) {
@@ -109,7 +127,22 @@ function wppb( $atts ) {
 		$wppb_output .= " full";
 	}
 	$wppb_output 	.= "\">";
-	$wppb_output 	.=	"	<span style=\"width: {$width};\" class=\"{$option}\"><span></span></span>";
+	$wppb_output	.= "<span";
+	if (isset($atts['option'])) {
+		$wppb_output .= " class=\"{$option}\"";
+	}
+	if (isset($atts['color'])) { // if color is set
+		$wppb_output .= " style=\"width: {$width}; background: {$color};";
+	} else {
+		$wppb_output .= " style=\"width: {$width};";
+	}
+	if (isset($atts['gradient'])) { // if a gradient is set
+		$gradient_end = wppb_brightness($atts['color'],$atts['gradient']);
+		$wppb_output .= "background: -moz-linear-gradient(top, {$color} 0%, $gradient_end 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,{$color}), color-stop(100%,$gradient_end)); background: -webkit-linear-gradient(top, {$color} 0%,$gradient_end 100%); background: -o-linear-gradient(top, {$color} 0%,$gradient_end 100%); background: -ms-linear-gradient(top, {$gradient} 0%,$gradient_end 100%); background: linear-gradient(top, {$color} 0%,$gradient_end 100%); \"";
+	} else {
+		$wppb_output .= "\"";
+	}
+	$wppb_output	.= "><span></span></span>";
 	$wppb_output	.=	"</div>";
 	$wppb_output	.= "</div>";
 	/**
@@ -119,4 +152,57 @@ function wppb( $atts ) {
 }
 add_shortcode('wppb','wppb');
 
-?>
+/**
+ * Brightness
+ * calculates a brighter or darker color based on the hex value given
+ * @since 1.1
+ * @link http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
+ * @param string $hex REQUIRED the hex color value
+ * @param string $percent REQUIRED how much the offset should be
+ * usage: wppb_brightness('ff0000','0.2')
+ */
+function wppb_brightness($hex, $percent) {
+	/**
+	 * Work out if hash given
+	 */
+	$hash = '';
+	if (stristr($hex,'#')) {
+		$hex = str_replace('#','',$hex);
+		$hash = '#';
+	}
+	/**
+	 * HEX TO RGB
+	 */
+	$rgb = array(hexdec(substr($hex,0,2)), hexdec(substr($hex,2,2)), hexdec(substr($hex,4,2)));
+	//// CALCULATE
+	for ($i=0; $i<3; $i++) {
+		// See if brighter or darker
+		if ($percent > 0) {
+			// Lighter
+			$rgb[$i] = round($rgb[$i] * $percent) + round(255 * (1-$percent));
+		} else {
+			// Darker
+			$positivePercent = $percent - ($percent*2);
+			$rgb[$i] = round($rgb[$i] * $positivePercent);// + round(0 * (1-$positivePercent));
+		}
+		// In case rounding up causes us to go to 256
+		if ($rgb[$i] > 255) {
+			$rgb[$i] = 255;
+		}
+	}
+	/**
+	 * RBG to Hex
+	 */
+	$hex = '';
+	for($i=0; $i < 3; $i++) {
+		// Convert the decimal digit to hex
+		$hexDigit = dechex($rgb[$i]);
+		// Add a leading zero if necessary
+		if(strlen($hexDigit) == 1) {
+		$hexDigit = "0" . $hexDigit;
+		}
+		// Append to the hex string
+		$hex .= $hexDigit;
+	}
+	return $hash.$hex;
+}
