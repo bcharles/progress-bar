@@ -192,6 +192,7 @@ Supported values: any positive or negative decimal value from 0.0 to 1.0 or -1.0
 * adds brightness function to create custom gradients on the fly based on the start color with the gradient parameter
 * adds endcolor prameter to create custom gradients
 * updates readme file with full usage instructions
+* adds a flat option to display the progress bar with no inner shadow as suggested by Ciprian Popescu [here](http://wordpress.org/support/topic/iris-colour-picker-for-bar-color?replies=13#post-3729300)
 
 **1.0.5**
 
