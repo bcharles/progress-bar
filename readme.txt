@@ -3,8 +3,8 @@ Contributors: jazzs3quence
 Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AWM2TG
 Tags: progress bar, css3, progress, shortcode
 Requires at least: 2.8
-Tested up to: 3.5
-Stable tag: 1.0.4
+Tested up to: 3.6
+Stable tag: 1.0.5
 
 a simple progress bar shortcode that can be styled with CSS
 
@@ -33,6 +33,8 @@ For demos of each of the options, go here: http://museumthemes.com/progress-bar/
 `[wppb progress=50 option=red percent=after]`
 
 `[wppb progress="50/100"]`
+
+`[wppb progress="$45/$50"]`
 
 == Installation ==
 
@@ -81,6 +83,11 @@ div.wppb-wrapper.right { width: 400px; height: 25px; position: relative; }
 div.wppb-wrapper div.inside { margin: 0 auto; line-height: 25px; color: #ffffff; font-weight: bold; position: absolute; z-index: 1; width: 400px; text-align: right; padding-right: 10px }`
 
 == Changelog ==
+
+**1.0.5**
+
+* fixed undefined index notices
+* added support for dollar progress bars for fundraising or budget reports, e.g. $45 / $50
 
 **1.0.4**
 
