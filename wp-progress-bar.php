@@ -136,7 +136,7 @@ function wppb( $atts ) {
 	} else {
 		$wppb_output .= " style=\"width: {$width};";
 	}
-	if (isset($atts['gradient'])) { // if a gradient is set
+	if (isset($atts['gradient']) && isset($atts['color'])) { // if a color AND gradient is set (gradient won't work without the starting color)
 		$gradient_end = wppb_brightness($atts['color'],$atts['gradient']);
 		$wppb_output .= "background: -moz-linear-gradient(top, {$color} 0%, $gradient_end 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,{$color}), color-stop(100%,$gradient_end)); background: -webkit-linear-gradient(top, {$color} 0%,$gradient_end 100%); background: -o-linear-gradient(top, {$color} 0%,$gradient_end 100%); background: -ms-linear-gradient(top, {$gradient} 0%,$gradient_end 100%); background: linear-gradient(top, {$color} 0%,$gradient_end 100%); \"";
 	} else {
