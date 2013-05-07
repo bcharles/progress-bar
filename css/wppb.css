@@ -113,6 +113,13 @@ div.wppb-progress > span.green {
 	background: linear-gradient(to bottom,  #83c783 0%,#52b152 33%,#008a00 62%,#005700 100%); /* W3C */
 }
 
+/* flat color */
+div.wppb-progress > span.flat {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 /* candystripes */
 div.wppb-progress > span.candystripes:after, div.wppb-progress > span.candystripe:after, div.wppb-progress > span.animated-candystripe:after, div.wppb-progress > span.animated-candystripes:after {
 	content: "";
