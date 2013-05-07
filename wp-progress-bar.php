@@ -3,7 +3,7 @@
 Plugin Name: Progress Bar
 Plugin URI: https://github.com/jazzsequence/progress-bar
 Description: a simple progress bar shortcode that can be styled with CSS
-Version: 1.0.4
+Version: 1.0.5
 Author: Chris Reynolds
 Author URI: http://museumthemes.com
 License: GPL3
@@ -11,7 +11,7 @@ License: GPL3
 
 /*
 	Progress Bar
-    Copyright (C) 2012 | Chris Reynolds (chris@arcanepalette.com)
+    Copyright (C) 2013 | Chris Reynolds (chris@arcanepalette.com)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -67,31 +67,54 @@ function wppb( $atts ) {
 		$width = $progress . "%";
 		$progress = $progress . " %";
 	} else {
+		$dollar = strpos($progress, '$');
+		if ( $dollar === false ) {
+			/**
+			 * this could be used for other currencies, potentially, though if it was, it should be changed into a case instead of an if statement
+			 */
+		} else {
+			/**
+			 * if there's a progress bar in the progress, it will break the math
+			 * let's strip it out so we can add it back later
+			 */
+			$progress = str_replace('$', '', $progress);
+		}
 		$xofy = explode('/',$progress);
 		if (!$xofy[1])
 			$xofy[1] = 100;
 		$percentage = $xofy[0] / $xofy[1] * 100;
 		$width = $percentage . "%";
-		$progress = $xofy[0] . " / " . $xofy[1];
+		if ( $dollar === false ) {
+			$progress = $xofy[0] . " / " . $xofy[1];
+		} else {
+			/**
+			 * if there's a dollar sign in the progress, display it manually
+			 */
+			$progress = '$' . $xofy[0] . ' / $' . $xofy[1];
+		}
 	}
-	// here's the html output of the progress bar
+	/**
+	 * here's the html output of the progress bar
+	 */
 	$wppb_output	= "<div class=\"wppb-wrapper {$percent}"; // adding $percent to the wrapper class, so I can set a width for the wrapper based on whether it's using div.wppb-wrapper.after or div.wppb-wrapper.inside or just div.wppb-wrapper
-	if ($atts['fullwidth']) {
+	if (isset($atts['fullwidth'])) {
 		$wppb_output .= " full";
 	}
 	$wppb_output .= "\">";
-	if ($atts['percent']) { // if $percent is not empty, add this
+	if (isset($atts['percent'])) { // if $percent is not empty, add this
 		$wppb_output .= "<div class=\"{$percent}\">{$progress}</div>";
 	}
 	$wppb_output 	.= 	"<div class=\"wppb-progress";
-	if ($atts['fullwidth']) {
+	if (isset($atts['fullwidth'])) {
 		$wppb_output .= " full";
 	}
 	$wppb_output 	.= "\">";
 	$wppb_output 	.=	"	<span style=\"width: {$width};\" class=\"{$option}\"><span></span></span>";
 	$wppb_output	.=	"</div>";
 	$wppb_output	.= "</div>";
-	// now return the progress bar
+	/**
+	 * now return the progress bar
+	 */
 	return $wppb_output;
 }
 add_shortcode('wppb','wppb');
