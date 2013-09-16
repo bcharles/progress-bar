@@ -134,6 +134,8 @@ function wppb_get_progress_bar($location = false, $text = false, $progress, $opt
 	$wppb_output 	.= 	"<div class=\"wppb-progress";
 	if ($fullwidth) {
 		$wppb_output .= " full";
+	} else {
+		$wppb_output .= " fixed";
 	}
 	$wppb_output 	.= "\">";
 	$wppb_output	.= "<span";
