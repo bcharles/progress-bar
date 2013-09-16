@@ -76,7 +76,7 @@ function wppb_check_pos($progress) {
 			 */
 		} else {
 			/**
-			 * if there's a progress bar in the progress, it will break the math
+			 * if there's a dollar sign in the progress, it will break the math
 			 * let's strip it out so we can add it back later
 			 */
 			$progress = str_replace('$', '', $progress);
@@ -87,12 +87,12 @@ function wppb_check_pos($progress) {
 		$percentage = $xofy[0] / $xofy[1] * 100;
 		$width = $percentage . "%";
 		if ( $dollar === false ) {
-			$progress = $xofy[0] . " / " . $xofy[1];
+			$progress = number_format_i18n( $xofy[0] ) . " / " . number_format_i18n( $xofy[1] );
 		} else {
 			/**
 			 * if there's a dollar sign in the progress, display it manually
 			 */
-			$progress = '$' . $xofy[0] . ' / $' . $xofy[1];
+			$progress = '$' . number_format_i18n( $xofy[0] ) . ' / $' . number_format_i18n( $xofy[1] );
 		}
 	}
 	return array($progress,$width); // pass both the progress and the width back
