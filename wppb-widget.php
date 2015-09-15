@@ -15,7 +15,7 @@ class WPPB_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_options = array( 'classname' => 'wppb-widget', 'description' => __('Allows you to add a progress bar to your sidebar.', 'wp-progress-bar' ) );
 		$control_options = array( 'id_base' => 'wppb-widget' );
-		$this->WP_Widget( 'wppb-widget', __('Progress Bar', 'wp-progress-bar' ), $widget_options, $control_options );
+		parent::__construct( 'wppb-widget', __('Progress Bar', 'wp-progress-bar' ), $widget_options, $control_options );
 	}
 
 	public function widget( $args, $instance ) {
