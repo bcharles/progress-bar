@@ -3,8 +3,8 @@ Contributors: jazzs3quence
 Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AWM2TG3D4HYQ6
 Tags: progress bar, css3, progress, shortcode
 Requires at least: 2.8
-Tested up to: 4.3
-Stable tag: 2.1.3
+Tested up to: 4.4
+Stable tag: 2.1.4
 
 a simple progress bar shortcode that can be styled with CSS
 
@@ -217,6 +217,9 @@ Supported values: any positive or negative decimal value from 0.0 to 1.0 or -1.0
 `[wppb progress=34 color=rgb(22,18,99) gradient=0.2]`
 
 == Changelog ==
+
+** 2.1.4 **
+* tested on WordPress 4.4
 
 ** 2.1.3 **
 
