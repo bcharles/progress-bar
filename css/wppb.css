@@ -121,9 +121,9 @@ div.wppb-progress > span.green {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80d580', endColorstr='#006a00',GradientType=0 ); /* IE 6-9 */
 }
 
-/* aqua */
-div.wppb-progress > span.cyan,
-div.wppb-progress > span.aqua {
+/* cyan */
+div.wppb-progress > span.aqua,
+div.wppb-progress > span.cyan {
 	background: #00ffff; /* Old browsers */
 	background: -moz-linear-gradient(top, #d5ffff 0%, #00ffff 50%, #00d5d5 100%); /* FF 3.6-15 */
 	background: -webkit-linear-gradient(top, #d5ffff 0%,#00ffff 50%,#00d5d5 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
@@ -132,6 +132,7 @@ div.wppb-progress > span.aqua {
 }
 
 /* teal */
+div.wppb-progress > span.bluegreen,
 div.wppb-progress > span.teal {
 	background: #008080; /* Old browsers */
 	background: -moz-linear-gradient(top, #aad5d5 0%, #008080 50%, #005555 100%); /* FF 3.6-15 */
@@ -186,6 +187,113 @@ div.wppb-progress > span.orange {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd5aa', endColorstr='#ff8000',GradientType=0 ); /* IE 6-9 */
 }
 
+/* brightpink */
+div.wppb-progress > span.hotpink,
+div.wppb-progress > span.brightpink {
+	background: #ff0080; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffaad5 0%, #ff0080 50%, #d5006a 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #ffaad5 0%,#ff0080 50%,#d5006a 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #ffaad5 0%,#ff0080 50%,#d5006a 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaad5', endColorstr='#ff0080',GradientType=0 ); /* IE 6-9 */
+}
+
+/* chartreuse */
+div.wppb-progress > span.lawngreen,
+div.wppb-progress > span.chartreuse {
+	background: #80ff00; /* Old browsers */
+	background: -moz-linear-gradient(top, #d5ffaa 0%, #80ff00 50%, #6ad500 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #d5ffaa 0%,#80ff00 50%,#6ad500 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #d5ffaa 0%,#80ff00 50%,#6ad500 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5ffaa', endColorstr='#80ff00',GradientType=0 ); /* IE 6-9 */
+}
+
+/* violet */
+div.wppb-progress > span.violet {
+	background: #8000ff; /* Old browsers */
+	background: -moz-linear-gradient(top, #d5aaff 0%, #8000ff 50%, #6a00d5 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #d5aaff 0%,#8000ff 50%,#6a00d5 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #d5aaff 0%,#8000ff 50%,#6a00d5 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5aaff', endColorstr='#8000ff',GradientType=0 ); /* IE 6-9 */
+}
+
+/* springgreen */
+div.wppb-progress > span.aquagreen,
+div.wppb-progress > span.springgreen {
+	background: #00ff80; /* Old browsers */
+	background: -moz-linear-gradient(top, #aaffd5 0%, #00ff80 50%, #00d56a 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #aaffd5 0%,#00ff80 50%,#00d56a 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #aaffd5 0%,#00ff80 50%,#00d56a 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaffd5', endColorstr='#00ff80',GradientType=0 ); /* IE 6-9 */
+}
+
+/* azure */
+div.wppb-progress > span.trueblue,
+div.wppb-progress > span.azure {
+	background: #0080ff; /* Old browsers */
+	background: -moz-linear-gradient(top, #aad5ff 0%, #0080ff 50%, #006ad5 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #aad5ff 0%,#0080ff 50%,#006ad5 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #aad5ff 0%,#0080ff 50%,#006ad5 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aad5ff', endColorstr='#0080ff',GradientType=0 ); /* IE 6-9 */
+}
+
+/* rose */
+div.wppb-progress > span.lightcoral,
+div.wppb-progress > span.rose {
+	background: #ff8080; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffc0c0 0%, #ff8080 50%, #d55555 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #ffc0c0 0%,#ff8080 50%,#d55555 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #ffc0c0 0%,#ff8080 50%,#d55555 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc0c0', endColorstr='#ff8080',GradientType=0 ); /* IE 6-9 */
+}
+
+/* lightgreen */
+div.wppb-progress > span.lightgreen {
+	background: #80ff80; /* Old browsers */
+	background: -moz-linear-gradient(top, #c0ffc0 0%, #80ff80 50%, #55d555 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #c0ffc0 0%,#80ff80 50%,#55d555 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #c0ffc0 0%,#80ff80 50%,#55d555 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0ffc0', endColorstr='#80ff80',GradientType=0 ); /* IE 6-9 */
+}
+
+/* periwinkle */
+div.wppb-progress > span.greyblue,
+div.wppb-progress > span.periwinkle {
+	background: #8080ff; /* Old browsers */
+	background: -moz-linear-gradient(top, #c0c0ff 0%, #8080ff 50%, #5555d5 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #c0c0ff 0%,#8080ff 50%,#5555d5 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #c0c0ff 0%,#8080ff 50%,#5555d5 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0ff', endColorstr='#8080ff',GradientType=0 ); /* IE 6-9 */
+}
+
+/* lightcyan */
+div.wppb-progress > span.lightaqua,
+div.wppb-progress > span.lightcyan {
+	background: #80ffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #d5ffff 0%, #80ffff 50%, #6ad5d5 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #d5ffff 0%,#80ffff 50%,#6ad5d5 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #d5ffff 0%,#80ffff 50%,#6ad5d5 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5ffff', endColorstr='#80ffff',GradientType=0 ); /* IE 6-9 */
+}
+
+/* lavender */
+div.wppb-progress > span.lightfuchsia,
+div.wppb-progress > span.lavender {
+	background: #ff80ff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffd5ff 0%, #ff80ff 50%, #d56ad5 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #ffd5ff 0%,#ff80ff 50%,#d56ad5 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #ffd5ff 0%,#ff80ff 50%,#d56ad5 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd5ff', endColorstr='#ff80ff',GradientType=0 ); /* IE 6-9 */
+}
+
+/* lightyellow */
+div.wppb-progress > span.lightyellow {
+	background: #ffff80; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffd5 0%, #ffff80 50%, #d5d56a 100%); /* FF 3.6-15 */
+	background: -webkit-linear-gradient(top, #ffffd5 0%,#ffff80 50%,#d5d56a 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
+	background: linear-gradient(to bottom, #ffffd5 0%,#ffff80 50%,#d5d56a 100%); /* W3C, FF 16+, Chrome 26+, IE 10+, Safari 7+, Opera 12+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffd5', endColorstr='#ffff80',GradientType=0 ); /* IE 6-9 */
+}
+
 /* white */
 div.wppb-progress > span.white {
 	background: #eaeaea; /* Old browsers */
@@ -205,9 +313,9 @@ div.wppb-progress > span.silver {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#959595',GradientType=0 ); /* IE 6-9 */
 }
 
-/* gray */
-div.wppb-progress > span.grey,
-div.wppb-progress > span.gray {
+/* grey */
+div.wppb-progress > span.gray,
+div.wppb-progress > span.grey {
 	background: #808080; /* Old browsers */
 	background: -moz-linear-gradient(top, #c0c0c0 0%, #404040 100%); /* FF 3.6-15 */
 	background: -webkit-linear-gradient(top, #c0c0c0 0%,#404040 100%); /* Chrome 10-25, Safari 5.1-6, Android 4-4.3 */
